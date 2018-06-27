@@ -17,7 +17,6 @@ var roleHarvester = {
                         structure.structureType == STRUCTURE_TOWER) && structure.energy < structure.energyCapacity;
                 }
             });
-            });
             if(targets.length > 0) {
                 creep.say('give energy to '+ targets[0]);
                 if(creep.transfer(targets[0], RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
