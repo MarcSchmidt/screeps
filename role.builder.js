@@ -2,7 +2,6 @@ var roleBuilder = {
 
     /** @param {Creep} creep **/
     run: function(creep) {
-
         if(creep.memory.building && creep.carry.energy == 0) {
             creep.memory.building = false;
             creep.say('harvest');
@@ -22,8 +21,9 @@ var roleBuilder = {
         }
         else {
             var sources = creep.room.find(FIND_SOURCES);
-            if(creep.harvest(sources[0]) == ERR_NOT_IN_RANGE) {
-                creep.moveTo(sources[0], {visualizePathStyle: {stroke: '#ffaa00'}});
+            source = sources.random();
+            if(creep.harvest(source) == ERR_NOT_IN_RANGE) {
+                creep.moveTo(source, {visualizePathStyle: {stroke: '#ffaa00'}});
             }
         }
     }
